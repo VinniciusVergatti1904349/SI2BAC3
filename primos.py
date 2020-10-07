@@ -5,22 +5,26 @@ from math import sqrt
 app = Flask(__name__)
 
 @app.route('/')
-def qtd_divisores(n):
-    qtd = 0
-    for divisor in range(1,n+1):
-        if n % divisor == 0:
-            qtd += 1
-    return qtd
-
-def primo(n):
-    return  qtd_divisores(n) == 2
-
-def intervalo_primos():
-    a = 0
-    b = 541
-    for num in range (a, b+1):
-        if primo(num):print(num)
-    return
+def primos():
+    limites = 100
+    c = 1
+    p = 1
+    numero = 3
+    primos = "2,"
+    while p <limites :
+        ehprimo = 1
+        for i in range(2, numero):
+            if numero % i ==0:
+                ehprimo = 0
+                break
+        if (ehprimo):
+            primos += str(numeros) + ","
+            p += 1
+            if(p % 10 ==0):
+                primos = primos + "<br>"
+        numero+=1
+    return primos
+    
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
