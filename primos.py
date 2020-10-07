@@ -18,7 +18,7 @@ def primos():
                 ehprimo = 0
                 break
         if (ehprimo):
-            primos += str(numeros) + ","
+            primos += str(numero) + ","
             p += 1
             if(p % 10 ==0):
                 primos = primos + "<br>"
